@@ -87,6 +87,53 @@
     onscroll(document, toggleBacktotop)
   }
 
+
+
+// <!--More option navigation script-->
+// $('.more-button').click(
+//     function(){
+//         $('navbar ul .more-options').toggleClass("show");
+//         alert("This is an alert...");
+//     }
+// )
+
+on('click', '.more-button', function(){
+    // alert("here you click...")
+    $('.more-options').toggleClass("show")
+})
+
+// $('.more-button').click(
+//     function(){
+//         $('navbar ul .more-options').toggleClass("show");
+//         alert("This is an alert...");
+//     }
+// )
+
+ // on('click', '.more-button', function(e) {
+ //    alert('This is an alert. More button is clicked...')
+ //    // select('body').classList.toggle('.navbar>ul>li>ul .more-options')
+ //    select('body').classList.toggle('.navbar>ul .more-options')
+ //    // select('.nav-menu>ul .more-options').classList.toggle('show')
+ //    // this.classList.toggle('nav-menu ul .more-options.show')
+ //    this.classList.toggle('show')
+ //    // this.classList.toggle('bi-x')
+ //
+ //    // console.log('Here comes to .more-button')
+ //    // let body = select('body')
+ //    // alert(body.classList)
+ //    // // if (body.classList.contains('.navbar>ul .more-options'))
+ //    // if (body.classList.contains('more-options'))
+ //    // {
+ //    //   alert('This is an alert. its inside...')
+ //    //   console.log('Here comes to .more-options.....')
+ //    //   // select('.nav-menu>ul .more-options').classList.toggle('show')
+ //    //   let navbarToggle = select('.more-options')
+ //    //   navbarToggle.classList.toggle('show')
+ //    //   // navbarToggle.classList.toggle('bi-list')
+ //    //   // navbarToggle.classList.toggle('bi-x')
+ //    // }
+ //  })
+
   /**
    * Mobile nav toggle
    */
@@ -113,6 +160,29 @@
       scrollto(this.hash)
     }
   }, true)
+
+  //   // Scrollto modified
+  // on('click', '.scrollto', function(e) {
+  //   if (select(this.hash)) {
+  //     e.preventDefault()
+  //
+  //     let body = select('body')
+  //     alert("here you scrollto...")
+  //     alert(body.classList)
+  //     if (body.classList.contains('mobile-nav-active')) {
+  //       body.classList.remove('mobile-nav-active')
+  //       let navbarToggle = select('.mobile-nav-toggle')
+  //       navbarToggle.classList.toggle('bi-list')
+  //       navbarToggle.classList.toggle('bi-x')
+  //     }
+  //     if (body.classList.contains('more-options')) {
+  //         alert("here you more-options...")
+  //         $('.more-options').toggleClass("show")
+  //     }
+  //     scrollto(this.hash)
+  //   }
+  // }, true)
+
 
   /**
    * Scroll with ofset on page load with hash links in the url

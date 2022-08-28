@@ -159,9 +159,8 @@ h6 {
   white-space: nowrap;
 }
 
-.nav-menu>ul>li a,
-.nav-menu>ul>li a:focus {
-  position: relative;
+.nav-menu a,
+.nav-menu a:focus {
   display: flex;
   align-items: center;
   color: #a8a9b4;
@@ -171,61 +170,62 @@ h6 {
   font-size: 15px;
 }
 
-.nav-menu>ul>li a i,
-.nav-menu>ul>li a:focus i {
-  position: relative;
+.nav-menu a i,
+.nav-menu a:focus i {
   font-size: 24px;
   padding-right: 8px;
   color: #6f7180;
 }
 
-.nav-menu>ul>li a:hover,
-.nav-menu>ul>li .active,
-.nav-menu>ul>li .active:focus,
-.nav-menu>ul>li:hover>a {
+.nav-menu a:hover,
+.nav-menu .active,
+.nav-menu .active:focus,
+.nav-menu li:hover>a {
   text-decoration: none;
   color: #fff;
 }
 
-.nav-menu>ul>li a:hover i,
-.nav-menu>ul>li .active i,
-.nav-menu>ul>li .active:focus i,
-.nav-menu>ul>li:hover>a i {
+.nav-menu a:hover i,
+.nav-menu .active i,
+.nav-menu .active:focus i,
+.nav-menu li:hover>a i {
   color: #149ddd;
 }
 
 
-/*Navigation suv-menu*/
-.nav-menu>ul>li>ul>li {
-  display: none;
-  position: relative;
-  white-space: nowrap;
-  padding-left: 35px;
-}
+/*.nav-menu>ul>ul {*/
+/*  position: static;*/
+/*  display: none;*/
+/*}*/
 
-.nav-menu>ul>li a:hover #arrow,
-.nav-menu>ul>li .active #arrow,
-.nav-menu>ul>li .active:focus #arrow,
-.nav-menu>ul>li:hover>a #arrow
-{
-  /*display: block;*/
-  color: #149ddd;
-  transform: rotate(180deg);
-  transition: transform 0.3s;
-}
+/*.nav-menu>ul>ul>li {*/
+/*  border-bottom: none;*/
+/*  position: static;*/
+/*  display: none;*/
+/*}*/
 
-.show {
-  display: block;
-}
+/*.nav-menu>ul>ul>li>a {*/
+/*  padding-left: 35px;*/
+/*}*/
 
-.nav-menu>ul .more-options.show {
-  display: block;
-}
+/*.nav-menu>ul>li>ul>li>a {*/
+/*  padding-left: 35px;*/
+/*}*/
 
-.nav-menu>ul>li>ul .more-options.show {
-  display: block;
-}
+/*.nav-menu>ul>li>ul>li> a:hover i,*/
+/*.nav-menu>ul>li>ul>li> .active i,*/
+/*.nav-menu>ul>li>ul>li> .active:focus i,*/
+/*.nav-menu>ul>li>ul>li>a {*/
+/*  position: static;*/
+/*}*/
 
+/*.nav-menu>ul>li>ul>li> .active i {*/
+/*  !*padding-left: 35px;*!*/
+/*}*/
+
+/*.nav-menu>ul>li>ul>li> .active:focus i {*/
+/*  !*padding-left: 35px;*!*/
+/*}*/
 
 
 /* Mobile Navigation */
@@ -280,8 +280,7 @@ h6 {
 }
 
 #hero .hero-container {
-  /*margin-left: 50px;*/
-  /*margin-left: 320px;*/
+  margin-left: 320px;
   position: relative;
   z-index: 2;
   min-width: 300px;
@@ -338,13 +337,6 @@ section {
 
 .section-bg {
   background: #f5f8fd;
-}
-
-.subsection-bg-white {
-  background: #ffffff;
-}
-.subsection-bg-blue {
-  background: #f5fff5;
 }
 
 .section-title {
