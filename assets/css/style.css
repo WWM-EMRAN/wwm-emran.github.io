@@ -1067,6 +1067,15 @@ section {
   }
 }
 
+
+/*Extra form decoration*/
+fieldset {
+  /*border: #00cc00 2px solid;*/
+  border: #149ddd 2px solid;
+  padding: 10px;
+  /*color: green;*/
+}
+
 /*--------------------------------------------------------------
 # Breadcrumbs
 --------------------------------------------------------------*/
