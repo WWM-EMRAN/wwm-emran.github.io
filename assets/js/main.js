@@ -89,6 +89,9 @@
 
 
 
+  /**
+   * Expand menu on click to show more items function #wwm.emran
+   */
 // <!--More option navigation script-->
 // $('.more-button').click(
 //     function(){
@@ -133,6 +136,7 @@ on('click', '.more-button', function(){
  //    //   // navbarToggle.classList.toggle('bi-x')
  //    // }
  //  })
+
 
   /**
    * Mobile nav toggle

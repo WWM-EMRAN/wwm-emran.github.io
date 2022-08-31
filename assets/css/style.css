@@ -32,6 +32,16 @@ h6 {
   font-family: "Raleway", sans-serif;
 }
 
+/*Custom Transparent Button*/
+transparent_button {
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+}
+
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/

@@ -111,10 +111,36 @@
 <!--	);-->
 <!--</script>-->
 
+<script type="text/javascript">
+	function CopyToClipboard(containerid) {
+	  if (document.selection) {
+	    var range = document.body.createTextRange();
+	    range.moveToElementText(document.getElementById(containerid));
+	    range.select().createTextRange();
+	    document.execCommand("copy");
+	  } else if (window.getSelection) {
+	    var range = document.createRange();
+	    range.selectNode(document.getElementById(containerid));
+	    window.getSelection().addRange(range);
+	    document.execCommand("copy");
+	    alert("Text has been copied, now paste in the text-area")
+	  }
+	}
+</script>
+
 
 <main id="main">
 
 	<section class="about section-bg">
+		<div>
+			Test copy-paste <br>
+			<button id="button1" onclick="CopyToClipboard('div1')">Click to copy</button>
+			<br /><br />
+			<div id="div1"> Check if I have been copied </div>
+			<br />
+			<textarea placeholder="Press ctrl+v to Paste the copied text" rows="5" cols="20"></textarea>
+		</div>
+
 		<div class="container">
 			<h3>All box icons</h3>
 			<div class="row">
