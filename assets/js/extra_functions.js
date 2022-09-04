@@ -3,6 +3,8 @@
 * Copy to clipboard function #wwm.emran
 */
 function CopyToClipboard(containerid) {
+    ClearSelection()
+
     if (document.selection) {
         var range = document.body.createTextRange();
         range.moveToElementText(document.getElementById(containerid));
@@ -16,6 +18,40 @@ function CopyToClipboard(containerid) {
         // alert("Text has been copied, now paste in the text-area")
     }
 }
+
+function ClearSelection()
+{
+    if (window.getSelection) {window.getSelection().removeAllRanges();}
+    else if (document.selection) {document.selection.empty();}
+}
+
+
+function SendEmail()
+{
+    alert("Here comes to the sendEmail function...");
+    var name =  document.getElementById('name').value;
+    var email =  document.getElementById('email').value;
+    var subject =  document.getElementById('subject').value;
+    var message =  document.getElementById('message').value;
+    var sub = encodeURIComponent("Email from "+name+" ("+email+") - "+subject);
+    var bod = encodeURIComponent("Contact message:\n=======================================================\n\n"+message+"\n\n"+name+"\n"+email);
+
+    var all = sub+bod;
+    alert(all);
+    document.location = "mailto:emran.ali@research.deakin.edu.au?from="+email+"&subject="+sub+"&body="+bod;
+}
+
+
+// $(function () {
+//     $('.SendEmail').click(function (event) {
+//     var name =  'name'; //document.getElementById(containerid) //
+//     var email = 'sample@gmail.com';
+//     var subject = 'Test';
+//     var emailBody = 'Hi Sample,';
+//     document.location = "mailto:emran.ali@research.deakin.edu.au?from="+email+"&subject="+subject+"&body="+emailBody;
+//     // document.location = "mailto:"+email+"?subject="+subject+"&body="+emailBody+ "?attach="+attach;
+//     });
+// });
 
 
 
