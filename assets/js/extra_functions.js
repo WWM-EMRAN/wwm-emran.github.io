@@ -28,7 +28,7 @@ function ClearSelection()
 
 function SendEmail()
 {
-    alert("Here comes to the sendEmail function...");
+    alert("This will open your default email client on your computer. Sorry if you don't have one, please use the email to contact manually.");
     var name =  document.getElementById('name').value;
     var email =  document.getElementById('email').value;
     var subject =  document.getElementById('subject').value;
@@ -37,7 +37,7 @@ function SendEmail()
     var bod = encodeURIComponent("Contact message:\n=======================================================\n\n"+message+"\n\n"+name+"\n"+email);
 
     var all = sub+bod;
-    alert(all);
+    // alert(all);
     document.location = "mailto:emran.ali@research.deakin.edu.au?from="+email+"&subject="+sub+"&body="+bod;
 }
 
