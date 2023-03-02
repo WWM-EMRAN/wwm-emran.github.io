@@ -62,6 +62,12 @@ function PrintElem(elem)
 }
 
 
+function DownloadFile(elem, url)
+{
+    document.getElementById(elem).src = url;
+}
+
+
 
 // $(function () {
 //     $('.SendEmail').click(function (event) {
