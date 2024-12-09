@@ -439,6 +439,37 @@ p{
   transform: rotate(180deg);
 }
 
+
+/* XXX */
+.dropdown-toggle::after {
+    transition: transform 0.3s ease; /* Ensure smooth transition */
+}
+
+.dropdown-menu.show .dropdown-toggle::after {
+    transform: rotate(180deg); /* Rotate the arrow when dropdown is shown */
+}
+
+@media (max-width: 768px) {
+    .dropdown-toggle::after {
+        transition: transform 0.3s ease;
+    }
+}
+
+
+/*// Optional: Ensure the 'rotate' class triggers the spin effect using CSS*/
+/*// If the arrow icon is represented by <i class="bi bi-chevron-down"></i>, you can use the following CSS:*/
+
+/* Add smooth transition for rotation */
+/*.dropdown-toggle i {*/
+/*    transition: transform 0.3s ease; !* This ensures a smooth rotation *!*/
+/*}*/
+
+/*!* Rotate arrow on active class toggle *!*/
+/*.dropdown-toggle.active i {*/
+/*    transform: rotate(180deg); !* Adjust the rotation degree if necessary *!*/
+/*}*/
+
+
 /* Ensure dropdown toggles are controlled explicitly by JavaScript */
 /* .navmenu .dropdown-active > a .toggle-dropdown {
   background-color: var(--accent-color);

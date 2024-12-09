@@ -45,6 +45,32 @@
     });
   });
 
+  /* XXX */
+// dropdown.addEventListener('click', function() {
+//     this.classList.toggle('active');
+//     this.querySelector('i').classList.toggle('rotate');
+// });
+//
+// // Optionally add event listener for mobile touch events
+// dropdown.addEventListener('touchstart', function() {
+//     this.classList.toggle('active');
+//     this.querySelector('i').classList.toggle('rotate');
+// });
+
+// const dropdown = document.querySelector('.dropdown-toggle');
+//
+// // Add event listener for both desktop and mobile (click/touch events)
+// dropdown.addEventListener('click', function (event) {
+//     // Toggle the 'active' class to indicate dropdown state
+//     this.classList.toggle('active');
+//
+//     // Target the icon inside the dropdown-toggle (assuming it's the down arrow)
+//     const arrowIcon = this.querySelector('i');
+//
+//     // Toggle the rotation of the arrow icon
+//     arrowIcon.classList.toggle('rotate');
+// });
+
   /**
    * Preloader
    */
