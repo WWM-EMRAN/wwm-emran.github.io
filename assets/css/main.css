@@ -912,7 +912,8 @@ table {
 thead {
   font-weight: 700;
   border: 1px solid #ddd;
-  background-color: rgba(8, 8, 8, 0.1);
+  /*background-color: rgba(8, 8, 8, 0.1);*/
+  background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
   padding: 10px;
   /* text-align: center; */
 }
