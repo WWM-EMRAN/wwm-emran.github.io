@@ -74,12 +74,53 @@
   /**
    * Preloader
    */
-  const preloader = document.querySelector('#preloader');
-  if (preloader) {
-    window.addEventListener('load', () => {
-      preloader.remove();
-    });
-  }
+  // const preloader = document.querySelector('#preloader');
+  // if (preloader) {
+  //   window.addEventListener('load', () => {
+  //     preloader.remove();
+  //   });
+  // }
+
+  /**
+   * EA Preloader
+   */
+  // const eapreloader = document.querySelector('#eapreloader');
+  // if (eapreloader) {
+  //   const ealogo = document.getElementById("ealogo");
+  //   const eapreloader = document.getElementById("eapreloader");
+  //   const eamainContent = document.getElementById("main-content");
+  //   ealogo.style.filter = "grayscale(0%)";
+  //
+  //   window.addEventListener('load', () => {
+  //     eapreloader.remove();
+  //   });
+  // }
+
+
+  /**
+   * My custom logo preloader
+   */
+  // JavaScript to handle the preloader
+  // JavaScript to handle the preloader
+  window.addEventListener("load", () => {
+    const logo = document.getElementById("logo");
+    const preloader = document.getElementById("preloader");
+    // const mainContent = document.getElementById("main-content");
+
+    // Begin color transition
+    logo.style.filter = "grayscale(0%)";
+
+    // Wait for the color transition to complete, then hide preloader
+    const computedStyle = getComputedStyle(logo);
+    const transitionDuration = parseFloat(computedStyle.transitionDuration) * 1000; // Convert to ms
+
+    setTimeout(() => {
+      preloader.style.display = "none";
+      // mainContent.style.display = "block";
+    }, transitionDuration);
+  });
+
+
 
   /**
    * Scroll top button
