@@ -1,0 +1,18 @@
+.g-scholar-icon {
+  display: inline-block;
+  width: 1.20em; /* Match the size of Boxicons 1.5em */
+  height: 1.20em;
+  background: no-repeat center/contain;
+  background-image: url('google-scholar-icon.png'); /* Replace with your SVG path */
+  vertical-align: middle;
+}
+
+
+.researchgate-icon {
+  display: inline-block;
+  width: 1.0em; /* Match the size of Boxicons */
+  height: 1.0em;
+  background: no-repeat center/contain;
+  background-image: url('researchgate-icon.svg'); /* Replace with your SVG path */
+  vertical-align: middle;
+}
