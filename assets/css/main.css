@@ -1643,6 +1643,19 @@ tr:nth-child(even) {
 }
 
 
+/* Responsive Image */
+.responsive-img {
+  width: 75%; /* Default width for larger screens */
+  max-width: 100%; /* Ensures the image doesn't exceed its container width */
+}
+
+@media (max-width: 768px) {
+  /* Adjust for screens 768px wide or smaller (e.g., tablets, mobile) */
+  .responsive-img {
+    width: 100%; /* Full width for smaller screens */
+  }
+}
+
 
 
 
