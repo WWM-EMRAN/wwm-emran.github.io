@@ -147,6 +147,7 @@
     window.addEventListener("load", () => {
       const logo = document.getElementById("logo");
       const preloader = document.getElementById("preloader");
+      const mainContent = document.getElementById("main-content");  // ✅ Fix here
 
       // Trigger logo color transition
       logo.style.filter = "grayscale(0%)";
@@ -157,8 +158,8 @@
         preloader.style.opacity = "0";
         setTimeout(() => {
           preloader.style.display = "none";
-          if (typeof mainContent !== "undefined") {
-            mainContent.style.display = "block";
+          if (mainContent) {
+            mainContent.style.display = "block";  // ✅ Now this works
           }
         }, 600);
       }, 800);
