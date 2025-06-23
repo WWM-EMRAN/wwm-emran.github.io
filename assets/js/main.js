@@ -97,28 +97,80 @@
   // }
 
 
-  /**
-   * My custom logo preloader
-   */
-  // JavaScript to handle the preloader
-  // JavaScript to handle the preloader
+  // /**
+  //  * My custom logo preloader
+  //  */
+  // // JavaScript to handle the preloader
+  // // JavaScript to handle the preloader
+  // window.addEventListener("load", () => {
+  //   const logo = document.getElementById("logo");
+  //   const preloader = document.getElementById("preloader");
+  //   // const mainContent = document.getElementById("main-content");
+  //
+  //   // Begin color transition
+  //   logo.style.filter = "grayscale(0%)";
+  //
+  //   // Wait for the color transition to complete, then hide preloader
+  //   const computedStyle = getComputedStyle(logo);
+  //   const transitionDuration = parseFloat(computedStyle.transitionDuration) * 1000; // Convert to ms
+  //
+  //   setTimeout(() => {
+  //     preloader.style.display = "none";
+  //     mainContent.style.display = "block";
+  //   }, transitionDuration);
+  // });
+
   window.addEventListener("load", () => {
     const logo = document.getElementById("logo");
     const preloader = document.getElementById("preloader");
-    // const mainContent = document.getElementById("main-content");
 
-    // Begin color transition
+    // Calculate how long the page took to load
+    const pageLoadTime = performance.now(); // in ms
+    const transitionDuration = Math.min(Math.max(pageLoadTime, 500), 3000); // Clamp between 0.5s and 3s
+
+    // Dynamically set the transition duration
+    logo.style.transition = `filter ${transitionDuration}ms ease-in-out`;
+
+    // Trigger color transition
     logo.style.filter = "grayscale(0%)";
 
-    // Wait for the color transition to complete, then hide preloader
-    const computedStyle = getComputedStyle(logo);
-    const transitionDuration = parseFloat(computedStyle.transitionDuration) * 1000; // Convert to ms
+    // Wait for transition to complete, then hide preloader
+    // setTimeout(() => {
+    //   preloader.style.display = "none";
+    //   if (typeof mainContent !== "undefined") {
+    //     mainContent.style.display = "block";
+    //   }
+    // }, transitionDuration);
 
     setTimeout(() => {
-      preloader.style.display = "none";
-      // mainContent.style.display = "block";
+      preloader.classList.add("fade-out");
+      setTimeout(() => {
+        preloader.style.display = "none";
+        if (typeof mainContent !== "undefined") {
+          mainContent.style.display = "block";
+        }
+      }, 300); // match the fade duration
     }, transitionDuration);
-  });
+
+    // // 333
+    // logo.classList.add("loading");
+    // setTimeout(() => {
+    //   logo.classList.remove("loading");
+    //   logo.style.filter = "grayscale(0%)";
+    //   preloader.classList.add("fade-out");
+    //   setTimeout(() => {
+    //     preloader.style.display = "none";
+    //     if (typeof mainContent !== "undefined") {
+    //       mainContent.style.display = "block";
+    //     }
+    //   }, 800);
+    // }, transitionDuration);
+
+});
+
+
+
+
 
 
 
