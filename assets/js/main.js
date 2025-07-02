@@ -120,53 +120,65 @@
   //   }, transitionDuration);
   // });
 
-  window.addEventListener("load", () => {
-    const logo = document.getElementById("logo");
-    const preloader = document.getElementById("preloader");
+//   window.addEventListener("load", () => {
+//     const logo = document.getElementById("logo");
+//     const preloader = document.getElementById("preloader");
+//
+//     // Calculate how long the page took to load
+//     const pageLoadTime = performance.now(); // in ms
+//     const transitionDuration = Math.min(Math.max(pageLoadTime, 500), 3000); // Clamp between 0.5s and 3s
+//
+//     // Dynamically set the transition duration
+//     logo.style.transition = `filter ${transitionDuration}ms ease-in-out`;
+//
+//     // Trigger color transition
+//     logo.style.filter = "grayscale(0%)";
+//
+//     // Wait for transition to complete, then hide preloader
+//     // setTimeout(() => {
+//     //   preloader.style.display = "none";
+//     //   if (typeof mainContent !== "undefined") {
+//     //     mainContent.style.display = "block";
+//     //   }
+//     // }, transitionDuration);
+//
+//     setTimeout(() => {
+//       preloader.classList.add("fade-out");
+//       setTimeout(() => {
+//         preloader.style.display = "none";
+//         if (typeof mainContent !== "undefined") {
+//           mainContent.style.display = "block";
+//         }
+//       }, 300); // match the fade duration
+//     }, transitionDuration);
+// });
 
-    // Calculate how long the page took to load
-    const pageLoadTime = performance.now(); // in ms
-    const transitionDuration = Math.min(Math.max(pageLoadTime, 500), 3000); // Clamp between 0.5s and 3s
 
-    // Dynamically set the transition duration
-    logo.style.transition = `filter ${transitionDuration}ms ease-in-out`;
+    window.addEventListener("load", () => {
+      const logo = document.getElementById("logo");
+      const preloader = document.getElementById("preloader");
 
-    // Trigger color transition
-    logo.style.filter = "grayscale(0%)";
+      // Calculate how long the page took to load
+      const pageLoadTime = performance.now(); // in ms
+      const transitionDuration = Math.min(Math.max(pageLoadTime, 500), 2000); // Clamp between 0.5s and 3s
 
-    // Wait for transition to complete, then hide preloader
-    // setTimeout(() => {
-    //   preloader.style.display = "none";
-    //   if (typeof mainContent !== "undefined") {
-    //     mainContent.style.display = "block";
-    //   }
-    // }, transitionDuration);
+      // Determine extra delay based on page
+      const path = window.location.pathname;
+      const extraDelay = (path === "/" || path.endsWith("/index.html")) ? 3000 : 1000;
 
-    setTimeout(() => {
-      preloader.classList.add("fade-out");
+      // Trigger color transition
+      logo.style.filter = "none";
+
+      // Fade out preloader after color transition
       setTimeout(() => {
-        preloader.style.display = "none";
-        if (typeof mainContent !== "undefined") {
-          mainContent.style.display = "block";
-        }
-      }, 300); // match the fade duration
-    }, transitionDuration);
-
-    // // 333
-    // logo.classList.add("loading");
-    // setTimeout(() => {
-    //   logo.classList.remove("loading");
-    //   logo.style.filter = "grayscale(0%)";
-    //   preloader.classList.add("fade-out");
-    //   setTimeout(() => {
-    //     preloader.style.display = "none";
-    //     if (typeof mainContent !== "undefined") {
-    //       mainContent.style.display = "block";
-    //     }
-    //   }, 800);
-    // }, transitionDuration);
-
-});
+        preloader.style.transition = "opacity 0.6s ease";
+        preloader.style.opacity = "0";
+        setTimeout(() => {
+          preloader.style.display = "none";
+          mainContent.style.display = "flex";
+        }, 500);
+      }, transitionDuration+extraDelay); // Wait for filter transition to complete
+    });
 
 
 
