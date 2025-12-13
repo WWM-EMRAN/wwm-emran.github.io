@@ -98,6 +98,8 @@ if (swiperElement) {
 
 ///////////////// For background change //////////////////
 document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll('#printable_cv .main-area .section');
+    if (!sections || sections.length === 0) return;
     // const heroImage = document.querySelector('img[data-aos="fade-in"]');
     const heroImage = document.querySelector('.hero-bg-image');
     const imageListContainer = document.querySelector('.image-list');

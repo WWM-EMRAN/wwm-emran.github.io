@@ -183,7 +183,7 @@
         preloader.style.opacity = "0";
         setTimeout(() => {
           preloader.style.display = "none";
-          mainContent.style.display = "flex";
+          // mainContent.style.display = "flex";
         }, 500);
       }, transitionDuration+extraDelay); // Wait for filter transition to complete
     });
